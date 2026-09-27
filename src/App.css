@@ -1,0 +1,596 @@
+/*
+ * =============================================
+ * EL AMIGO - ESTILOS DE REACT
+ * =============================================
+ * Estilos para:
+ * - Filtros.
+ * - Tarjetas de productos.
+ * - Carrito flotante.
+ * - Carrito minimizado.
+ * - Productos dentro del carrito.
+ */
+
+/* =============================================
+   CONTENEDOR PRINCIPAL DE REACT
+   ============================================= */
+
+.react-elamigo {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Evita estilos globales heredados de Vite */
+
+body {
+  display: block;
+  min-width: 0;
+  margin: 0;
+}
+
+/* =============================================
+   FILTROS
+   ============================================= */
+
+.filtros-react {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 24px;
+  padding: 18px;
+  box-sizing: border-box;
+  background: rgba(10, 10, 15, 0.88);
+  border: 1px solid #6c2bff;
+  border-radius: 12px;
+  box-shadow:
+          0 0 20px rgba(108, 43, 255, 0.2);
+}
+
+.filtro-react {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  flex: 1;
+  min-width: 0;
+}
+
+.filtro-react label {
+  color: #00aeff;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.filtro-react input,
+.filtro-react select {
+  width: 100%;
+  min-height: 40px;
+  padding: 9px 12px;
+  box-sizing: border-box;
+  border: 1px solid #6c2bff;
+  border-radius: 7px;
+  outline: none;
+  background: rgba(20, 20, 25, 0.95);
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  transition:
+          border-color 0.2s ease,
+          box-shadow 0.2s ease;
+}
+
+.filtro-react input::placeholder {
+  color: #888888;
+}
+
+.filtro-react input:focus,
+.filtro-react select:focus {
+  border-color: #00aeff;
+  box-shadow:
+          0 0 10px rgba(0, 174, 255, 0.25);
+}
+
+.filtro-react select option {
+  background: #141419;
+  color: #ffffff;
+}
+
+.btn-limpiar-filtros-react {
+  min-height: 40px;
+  padding: 9px 16px;
+  border: 1px solid #ff20c8;
+  border-radius: 7px;
+  background: linear-gradient(
+          90deg,
+          #ff20c8,
+          #6c2bff
+  );
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+}
+
+.btn-limpiar-filtros-react:hover {
+  transform: translateY(-2px);
+  box-shadow:
+          0 0 15px rgba(255, 32, 200, 0.45);
+}
+
+.sin-resultados-react {
+  width: 100%;
+  margin: 24px 0;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #6c2bff;
+  border-radius: 10px;
+  background: rgba(10, 10, 15, 0.88);
+  color: #cccccc;
+  text-align: center;
+}
+
+/* =============================================
+   PRODUCTOS
+   ============================================= */
+
+.productos-grid-react {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+/* =============================================
+   TARJETA DE PRODUCTO
+   ============================================= */
+
+.producto-react {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+  padding: 16px;
+  box-sizing: border-box;
+  background: rgba(10, 10, 15, 0.88);
+  border: 1px solid #6c2bff;
+  border-radius: 12px;
+  transition:
+          transform 0.3s ease,
+          border-color 0.3s ease,
+          box-shadow 0.3s ease;
+}
+
+.producto-react:hover {
+  transform: translateY(-5px);
+  border-color: #00aeff;
+  box-shadow:
+          0 0 20px rgba(0, 174, 255, 0.25);
+}
+
+/* IMAGEN */
+
+.producto-react img {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 14px;
+}
+
+/* NOMBRE */
+
+.producto-react h3 {
+  margin: 0 0 10px;
+  color: #ffffff;
+  font-size: 1.15rem;
+  line-height: 1.3;
+}
+
+/* DESCRIPCIÓN */
+
+.producto-react p {
+  margin: 0 0 10px;
+  color: #cccccc;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* PRECIO ANTERIOR */
+
+.producto-react del {
+  color: #888888;
+  font-size: 0.9rem;
+}
+
+.descuento-react {
+  display: inline-block;
+  align-self: flex-start;
+  margin-bottom: 10px;
+  padding: 4px 8px;
+  border: 1px solid #ff20c8;
+  border-radius: 5px;
+  background: rgba(255, 32, 200, 0.12);
+  color: #ff20c8;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* PRECIO ACTUAL */
+
+.producto-react > strong {
+  display: block;
+  margin-bottom: 14px;
+  color: #00aeff;
+  font-size: 1.3rem;
+}
+
+/* BOTÓN AGREGAR */
+
+.producto-react button {
+  width: 100%;
+  margin-top: auto;
+  padding: 10px 14px;
+  border: 1px solid #ff20c8;
+  border-radius: 7px;
+  background: linear-gradient(
+          90deg,
+          #ff20c8,
+          #6c2bff
+  );
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+}
+
+.producto-react button:hover {
+  transform: translateY(-2px);
+  box-shadow:
+          0 0 15px rgba(255, 32, 200, 0.45);
+}
+
+/* =============================================
+   CARRITO FLOTANTE
+   ============================================= */
+
+.carrito-react {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+  width: 360px;
+  max-width: calc(100vw - 48px);
+  padding: 18px;
+  box-sizing: border-box;
+  background: rgba(10, 10, 15, 0.78);
+  border: 1px solid #6c2bff;
+  border-radius: 12px;
+  box-shadow:
+          0 0 25px rgba(108, 43, 255, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: aparecer-carrito 0.25s ease;
+}
+
+@keyframes aparecer-carrito {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CABECERA */
+
+.carrito-header-react {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(108, 43, 255, 0.45);
+}
+
+.carrito-header-react h2 {
+  margin: 0;
+  color: #00aeff;
+  font-size: 1.2rem;
+}
+
+/* BOTÓN MINIMIZAR */
+
+.btn-minimizar-react {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid #6c2bff;
+  border-radius: 6px;
+  background: rgba(108, 43, 255, 0.2);
+  color: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition:
+          background 0.2s ease,
+          border-color 0.2s ease;
+}
+
+.btn-minimizar-react:hover {
+  background: #6c2bff;
+  border-color: #00aeff;
+}
+
+/* CANTIDAD */
+
+.cantidad-productos-react {
+  margin: 12px 0;
+  color: #cccccc;
+  font-size: 0.9rem;
+}
+
+.cantidad-productos-react strong {
+  color: #ff20c8;
+}
+
+/* LISTA */
+
+.lista-carrito-react {
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* PRODUCTO DEL CARRITO */
+
+.producto-carrito-react {
+  display: grid;
+  grid-template-columns:
+        minmax(0, 1fr)
+        auto
+        auto;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(108, 43, 255, 0.3);
+}
+
+.producto-carrito-react span {
+  min-width: 0;
+  color: #ffffff;
+  font-size: 0.85rem;
+  line-height: 1.3;
+}
+
+.producto-carrito-react strong {
+  color: #00aeff;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* ELIMINAR */
+
+.producto-carrito-react button {
+  padding: 5px 8px;
+  border: 1px solid #ff20c8;
+  border-radius: 5px;
+  background: transparent;
+  color: #ff20c8;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition:
+          background 0.2s ease,
+          color 0.2s ease;
+}
+
+.producto-carrito-react button:hover {
+  background: #ff20c8;
+  color: #ffffff;
+}
+
+/* =============================================
+   RESUMEN
+   ============================================= */
+
+.resumen-carrito-react {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #6c2bff;
+}
+
+.resumen-carrito-react span {
+  color: #cccccc;
+}
+
+.resumen-carrito-react strong {
+  color: #00aeff;
+  font-size: 1.15rem;
+}
+
+/* =============================================
+   ACCIONES
+   ============================================= */
+
+.acciones-carrito-react {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.acciones-carrito-react button {
+  flex: 1;
+  padding: 9px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+}
+
+/* PAGAR */
+
+.btn-pagar-react {
+  border: 1px solid #ff20c8;
+  background: linear-gradient(
+          90deg,
+          #ff20c8,
+          #6c2bff
+  );
+  color: #ffffff;
+}
+
+.btn-pagar-react:hover {
+  transform: translateY(-2px);
+  box-shadow:
+          0 0 12px rgba(255, 32, 200, 0.4);
+}
+
+/* LIMPIAR */
+
+.btn-limpiar-react {
+  border: 1px solid #555555;
+  background: rgba(20, 20, 25, 0.8);
+  color: #dddddd;
+}
+
+.btn-limpiar-react:hover {
+  border-color: #00aeff;
+  color: #ffffff;
+}
+
+/* =============================================
+   CARRITO MINIMIZADO
+   ============================================= */
+
+.btn-carrito-minimizado-react {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 10000;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #6c2bff;
+  border-radius: 50%;
+  background: rgba(10, 10, 15, 0.75);
+  color: #ffffff;
+  font-size: 1.7rem;
+  cursor: pointer;
+  box-shadow:
+          0 0 20px rgba(108, 43, 255, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition:
+          transform 0.2s ease,
+          border-color 0.2s ease,
+          box-shadow 0.2s ease;
+}
+
+.btn-carrito-minimizado-react:hover {
+  transform: scale(1.08);
+  border-color: #00aeff;
+  box-shadow:
+          0 0 25px rgba(0, 174, 255, 0.5);
+}
+
+/* CONTADOR DEL BOTÓN */
+
+.btn-carrito-minimizado-react span {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  border: 2px solid #0a0a0f;
+  border-radius: 50%;
+  background: #ff20c8;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+/* =============================================
+   RESPONSIVE - TABLET
+   ============================================= */
+
+@media (max-width: 900px) {
+  .productos-grid-react {
+    grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =============================================
+   RESPONSIVE - FILTROS
+   ============================================= */
+
+@media (max-width: 700px) {
+  .filtros-react {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-limpiar-filtros-react {
+    width: 100%;
+  }
+}
+
+/* =============================================
+   RESPONSIVE - MÓVIL
+   ============================================= */
+
+@media (max-width: 600px) {
+  .productos-grid-react {
+    grid-template-columns: 1fr;
+  }
+
+  .producto-react img {
+    height: 210px;
+  }
+
+  .carrito-react {
+    right: 12px;
+    bottom: 12px;
+    width: calc(100vw - 24px);
+    max-width: none;
+  }
+
+  .btn-carrito-minimizado-react {
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .producto-carrito-react {
+    grid-template-columns:
+            minmax(0, 1fr)
+            auto;
+  }
+
+  .producto-carrito-react button {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .acciones-carrito-react {
+    flex-direction: column;
+  }
+}

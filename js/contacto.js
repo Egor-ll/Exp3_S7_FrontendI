@@ -1,17 +1,6 @@
-/*
- * =============================================
- * EL AMIGO - VALIDACIÓN DEL FORMULARIO
- * =============================================
- * Funcionalidades:
- * - Validación mediante evento submit.
- * - Validación adicional con JavaScript.
- * - Manipulación del DOM para mostrar mensajes.
- * - Restablecimiento del formulario.
- */
 
 // Seleccionamos el formulario mediante el DOM.
 const formulario = document.querySelector("form");
-
 
 // EVENTO SUBMIT
 // =============================================
