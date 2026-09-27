@@ -45,11 +45,14 @@ function App({ catalogo = 'productos' }) {
       accesorios: '/data/accesorios.json'
     }
 
-    const archivo =
-        archivosCatalogo[catalogo] ||
-        archivosCatalogo.productos
+      const archivo =
+          archivosCatalogo[catalogo] ||
+          archivosCatalogo.productos
 
-    fetch(archivo)
+      const rutaArchivo =
+          `${import.meta.env.BASE_URL}${archivo.replace('/data/', 'data/')}`
+
+      fetch(rutaArchivo)
         .then((respuesta) => {
           if (!respuesta.ok) {
             throw new Error(
