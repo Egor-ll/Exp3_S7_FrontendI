@@ -4,8 +4,11 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/Exp3_S7_FrontendI/',
   plugins: [
     react(),
-    babel({ presets: [reactCompilerPreset()] })
+    babel({
+      presets: [reactCompilerPreset()]
+    })
   ],
 })
